@@ -1,0 +1,51 @@
+﻿@model List<Sistema_Pedidos.Models.PedidoModel>
+
+<div class="row">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+        <a href="/Pedido/Novo" class="btn btn-primary">Cadastrar</a>
+    </div>
+  
+    <div class="col-8 offset-2">
+        <div class="card">
+            <div class="card-header">
+                Cadastro de Pedidos
+            </div>
+            <div class="card-body">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Valor Total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (PedidoModel pedido in Model)
+                        {
+                            <tr>
+                                <td>@pedido.Produto</td>
+                                <td>@pedido.Quantidade</td>
+                                <td>@pedido.ValorTotal</td>
+                                <td>
+                                    <a href="/Pedido/Editar/@pedido.Id" class="btn btn-warning">
+                                        Editar
+                                    </a>
+                                    <a href="/Pedido/Excluir/@pedido.Id" class="btn btn-danger">
+                                        Excluir
+                                    </a>
+                                   
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+
+</div>

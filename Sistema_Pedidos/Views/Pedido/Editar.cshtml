@@ -1,0 +1,32 @@
+﻿@model Sistema_Pedidos.Models.PedidoModel
+<div class="row">
+
+    <div class="offset-4 col-4">
+        <div class="card">
+            <div class="card-header">
+                Editar Pedido
+            </div>
+            <div class="card-body">
+
+                <form action="/Pedido/SalvarDados" method="post">
+                    <input class="form-control" type="hidden" name="Id" value="@Model.Id" />
+
+                    <label>Produto:</label>
+                    <input type="text" name="Produto" class="form-control" value="@Model.Produto" />
+                    <br />
+
+                    <label>Quantidade:</label>
+                    <input type="number" name="Quantidade" class="form-control" value="@Model.Quantidade" />
+                    <br />
+
+                    <label>Valor Total:</label>
+                    <input type="number" name="ValorTotal" class="form-control" value="@Model.ValorTotal" />
+                    <br />
+                    <button type="submit" class="btn btn-success">
+                        Enviar dados
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
